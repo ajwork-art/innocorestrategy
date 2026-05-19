@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innocore Strategy &amp; Solutions LLC — Navigating the Digital Frontier</title>
+  <meta name="description" content="Innocore Strategy &amp; Solutions LLC provides enterprise AI governance, responsible AI strategy, and the patent-pending TrustNet platform for regulated industries." />
+  <meta property="og:title" content="Innocore Strategy &amp; Solutions LLC" />
+  <meta property="og:description" content="Enterprise AI governance and responsible AI strategy for financial services and regulated industries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://innocorestrategy.com" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- GA placeholder -->
+  <!-- GA_TAG_PLACEHOLDER -->
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --navy:       #0B1F3B;
+      --navy-mid:   #112847;
+      --gold:       #C9A84C;
+      --gold-dark:  #A8893F;
+      --gold-faint: #FDF8EC;
+      --gold-light: #F5EDD3;
+      --text:       #1E293B;
+      --muted:      #475569;
+      --subtle:     #98A2B3;
+      --bg-gray:    #F5F7FA;
+      --off-white:  #FAFBFC;
+      --border:     #E2E8F0;
+      --white:      #FFFFFF;
+
+      --radius:     6px;
+      --transition: color 180ms cubic-bezier(0.4,0,0.2,1),
+                    border-color 180ms cubic-bezier(0.4,0,0.2,1),
+                    background 180ms cubic-bezier(0.4,0,0.2,1),
+                    opacity 180ms cubic-bezier(0.4,0,0.2,1),
+                    box-shadow 180ms cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       LAYOUT UTILITIES
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .reading-col  { max-width: 700px; }
+    .narrow-col   { max-width: 880px; }
+
+    /* Section spacing */
+    .section        { padding: 7.5rem 0; }
+    .section--sm    { padding: 5rem 0; }
+    .section--lg    { padding: 10rem 0; }
+
+    /* Alternating backgrounds */
+    .bg-white  { background: var(--white); }
+    .bg-gray   { background: var(--bg-gray); }
+    .bg-navy   { background: var(--navy); }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .eyebrow {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .eyebrow--light { color: var(--gold); }
+
+    .gold-rule {
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    .hero-heading {
+      font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .section-heading {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-heading--light { color: var(--white); }
+
+    .sub-heading {
+      font-size: 1.375rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .body-prose {
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.82;
+      color: var(--muted);
+    }
+
+    .body-prose--light { color: rgba(255,255,255,0.78); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.625rem 1.75rem;
+      border-radius: var(--radius);
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: #CBD5E1;
+    }
+    .btn-secondary:hover {
+      border-color: var(--navy);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--white);
+    }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* SVG logo fallback shown if no image */
+    .logo-svg-fallback {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-wordmark .logo-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .logo-wordmark .logo-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.625rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: var(--transition);
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover  { color: var(--navy); }
+    .nav-link.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .nav-cta { margin-left: 0.5rem; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2.5rem 2rem;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 99;
+      box-shadow: 0 8px 24px rgba(11,31,59,0.08);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav .nav-link {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav .nav-cta { margin-left: 0; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding: 7rem 0 6rem;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold-faint) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-light);
+      color: var(--gold-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-heading { margin-bottom: 1.5rem; }
+
+    .hero-heading em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .hero-sub {
+      font-size: 1.1875rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-wrap {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 32px 80px rgba(11,31,59,0.22), 0 0 0 12px rgba(201,168,76,0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .hero-logo-inner {
+      text-align: center;
+      color: var(--white);
+      padding: 2rem;
+    }
+
+    .hero-trust-bar {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-stat .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .trust-stat .stat-num span { color: var(--gold); }
+    .trust-stat .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================================
+       SECTION HEADER (reusable)
+    ============================================================ */
+    .section-header { margin-bottom: 3.5rem; }
+    .section-header--center { text-align: center; }
+    .section-header--center .gold-rule { margin-left: auto; margin-right: auto; }
+
+    /* ============================================================
+       ABOUT SECTION
+    ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .about-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 8px;
+      height: 1.5px;
+      background: var(--gold);
+      margin-top: 0.65rem;
+    }
+
+    .about-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2.5rem;
+      color: var(--white);
+    }
+
+    .about-card .card-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.375rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .about-card p {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .about-card-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 1.5rem 0;
+    }
+
+    .focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .focus-tag {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       TRUSTNET PLATFORM
+    ============================================================ */
+    .trustnet-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .trustnet-header .section-header { margin-bottom: 0; flex: 1; }
+
+    .trustnet-badge {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.875rem;
+      border-radius: 100px;
+      margin-top: 1rem;
+    }
+
+    .trustnet-badge::before {
+      content: '⚑';
+      font-size: 0.75rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 240ms cubic-bezier(0.4,0,0.2,1);
+      transform-origin: left;
+    }
+
+    .feature-card:hover::before { transform: scaleX(1); }
+
+    .feature-card:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 8px 32px rgba(11,31,59,0.07);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-icon svg { width: 22px; height: 22px; }
+
+    .feature-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .feature-card p {
+      font-size: 0.9375rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+       HUMAN VALUE GOVERNANCE
+    ============================================================ */
+    .hvg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .hvg-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .hvg-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(201,168,76,0.35);
+    }
+
+    .hvg-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.25);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .hvg-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 0.875rem;
+    }
+
+    .hvg-card p {
+      font-size: 0.9375rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .hvg-card .hvg-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 1px;
+    }
+
+    /* ============================================================
+       ADVISORY SERVICES
+    ============================================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      border-radius: 10px;
+      padding: 2.25rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(11,31,59,0.08);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .service-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.35;
+    }
+
+    .service-card p {
+      font-size: 0.9375rem;
+      line-height: 1.72;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-deliverables {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    .service-deliverables li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .service-deliverables li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 8px;
+      height: 1.5px;
+      background: var(--gold);
+      margin-top: 0.55rem;
+    }
+
+    /* ============================================================
+       FOUNDER SECTION
+    ============================================================ */
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .founder-photo-wrap {
+      position: relative;
+    }
+
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      box-shadow: 0 24px 60px rgba(11,31,59,0.14);
+    }
+
+    /* Placeholder if no photo */
+    .founder-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 24px 60px rgba(11,31,59,0.14);
+    }
+
+    .founder-photo-placeholder svg {
+      width: 80px;
+      height: 80px;
+      opacity: 0.3;
+    }
+
+    .founder-gold-bar {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      width: 80px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .founder-content .eyebrow { margin-bottom: 0.5rem; }
+
+    .founder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .founder-title {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .founder-bio {
+      font-size: 1.0625rem;
+      line-height: 1.82;
+      color: var(--muted);
+    }
+
+    .founder-bio + .founder-bio { margin-top: 1rem; }
+
+    .credential-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-top: 2rem;
+    }
+
+    .credential-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-light);
+      color: var(--navy);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.375rem 0.875rem;
+      border-radius: 100px;
+    }
+
+    .credential-chip::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.625rem;
+    }
+
+    .prior-companies {
+      margin-top: 2rem;
+    }
+
+    .prior-companies .label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--subtle);
+      margin-bottom: 0.75rem;
+    }
+
+    .company-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+    }
+
+    .company-tag {
+      background: var(--bg-gray);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--gold-faint);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 18px; height: 18px; color: var(--gold-dark); }
+
+    .contact-item-content .label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--subtle);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item-content a,
+    .contact-item-content span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: var(--transition);
+    }
+
+    .contact-item-content a:hover { color: var(--gold-dark); }
+
+    .contact-form {
+      background: var(--bg-gray);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .contact-form h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--text);
+      background: var(--white);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* ============================================================
+       CTA BAND
+    ============================================================ */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #0e2d54 100%);
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(201,168,76,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    .cta-band .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--navy);
+      padding: 4rem 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .logo-link .logo-name,
+    .footer-brand .logo-link .logo-sub { color: var(--white); }
+    .footer-brand .logo-link .logo-sub { color: rgba(255,255,255,0.45); }
+
+    .footer-gold-bar {
+      width: 36px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-col ul li a {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.55);
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p,
+    .footer-bottom a {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      transition: var(--transition);
+    }
+
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+    .footer-bottom .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .founder-grid { grid-template-columns: 280px 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .hvg-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .founder-grid { grid-template-columns: 1fr; }
+      .founder-photo-wrap { max-width: 280px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .trustnet-header { flex-direction: column; gap: 1rem; }
+    }
+
+    @media (max-width: 639px) {
+      .section  { padding: 5rem 0; }
+      .section--lg { padding: 6rem 0; }
+      .container { padding: 0 1.25rem; }
+
+      .site-header { height: 64px; }
+      .mobile-nav { top: 64px; padding: 1.25rem 1.25rem 1.75rem; }
+
+      .site-nav { display: none; }
+      .hamburger { display: flex; }
+
+      .logo-wordmark { display: none; }
+
+      .features-grid,
+      .hvg-grid,
+      .services-grid { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      .hero-trust-bar { flex-wrap: wrap; gap: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta-band .cta-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo-link" aria-label="Innocore Strategy & Solutions LLC">
+        <!-- Replace src with path to your logo file, e.g. assets/images/logo.jpg -->
+        <img
+          src="assets/images/logo.jpg"
+          alt="Innocore Logo"
+          class="logo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="logo-svg-fallback" style="display:none;" aria-hidden="true">
+          <!-- Inline SVG brand mark fallback -->
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="8" r="4" stroke="#C9A84C" stroke-width="1.5"/>
+            <path d="M4 22c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 18h10M6 21h14" stroke="rgba(201,168,76,0.4)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-wordmark">
+          <span class="logo-name">Innocore</span>
+          <span class="logo-sub">Strategy &amp; Solutions LLC</span>
+        </div>
+      </a>
+
+      <nav class="site-nav" role="navigation" aria-label="Main">
+        <a href="#about"    class="nav-link">About</a>
+        <a href="#trustnet" class="nav-link">TrustNet</a>
+        <a href="#hvg"      class="nav-link">HVG Framework</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#founder"  class="nav-link">Founder</a>
+        <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#about"    class="nav-link">About</a>
+    <a href="#trustnet" class="nav-link">TrustNet Platform</a>
+    <a href="#hvg"      class="nav-link">HVG Framework</a>
+    <a href="#services" class="nav-link">Advisory Services</a>
+    <a href="#founder"  class="nav-link">Founder</a>
+    <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero bg-white">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-badge">AI Governance for Regulated Enterprise</span>
+          <h1 class="hero-heading">
+            Governing AI That<br/>
+            Works for <em>Humans</em>
+          </h1>
+          <p class="hero-sub">
+            Innocore Strategy &amp; Solutions LLC brings enterprise-grade AI governance, responsible AI strategy, and the patent-pending TrustNet™ platform to financial services and regulated industries.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Schedule a Briefing</a>
+            <a href="#trustnet" class="btn btn-secondary">Explore TrustNet™</a>
+          </div>
+
+          <div class="hero-trust-bar">
+            <div class="trust-stat">
+              <div class="stat-num">1<span>+</span></div>
+              <div class="stat-label">Patent Pending</div>
+            </div>
+            <div class="trust-stat">
+              <div class="stat-num">20<span>+</span></div>
+              <div class="stat-label">Years Enterprise Experience</div>
+            </div>
+            <div class="trust-stat">
+              <div class="stat-num">F<span>500</span></div>
+              <div class="stat-label">Enterprise Ready</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-logo-wrap">
+            <img
+              src="assets/images/logo.jpg"
+              alt="Innocore Strategy & Solutions LLC"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+            />
+            <div class="hero-logo-inner" style="display:none;">
+              <div style="font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">INNOCORE</div>
+              <div style="font-size:0.6875rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.25rem;">Strategy &amp; Solutions LLC</div>
+              <div style="width:36px;height:2px;background:#C9A84C;margin:0.75rem auto;"></div>
+              <div style="font-size:0.625rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);">Navigating the Digital Frontier</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT INNOCORE
+  ============================================================ -->
+  <section class="section bg-gray" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-header">
+            <span class="eyebrow">About Innocore</span>
+            <span class="gold-rule"></span>
+            <h2 class="section-heading">AI Governance Built for High-Stakes Environments</h2>
+            <p class="body-prose">
+              Innocore Strategy &amp; Solutions LLC is an AI governance and strategy firm specializing in financial services and regulated enterprise. We help organizations deploy AI systems that are accountable, auditable, and aligned with human values — at every layer of the stack.
+            </p>
+            <p class="body-prose" style="margin-top:1rem;">
+              From runtime policy enforcement to enterprise transformation leadership, Innocore bridges the gap between AI innovation and responsible enterprise deployment — delivering frameworks, platforms, and advisory services that hold up under regulatory scrutiny.
+            </p>
+          </div>
+
+          <ul class="about-list">
+            <li>Deep specialization in financial services AI regulation and compliance</li>
+            <li>Runtime AI governance — not just policies on paper, but enforcement in production</li>
+            <li>Proprietary Human Value Governance™ (HVG) framework for structured accountability</li>
+            <li>Patent-pending TrustNet™ platform for trust evidence and audit-ready AI</li>
+            <li>Trusted advisor to enterprise product, risk, and technology leadership</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="about-card">
+            <div class="card-eyebrow">Our Focus</div>
+            <h3>Regulated Industries Demand More from AI Governance</h3>
+            <p>
+              AI in financial services, healthcare, and regulated enterprise cannot rely on good intentions. Innocore builds governance infrastructure that is enforceable, evidence-backed, and ready for examiner review.
+            </p>
+            <div class="about-card-divider"></div>
+            <div class="card-eyebrow">Industry Sectors</div>
+            <div class="focus-tags">
+              <span class="focus-tag">Financial Services</span>
+              <span class="focus-tag">Banking &amp; Capital Markets</span>
+              <span class="focus-tag">Insurance</span>
+              <span class="focus-tag">Wealth Management</span>
+              <span class="focus-tag">Regulated Enterprise</span>
+              <span class="focus-tag">FinTech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TRUSTNET PLATFORM
+  ============================================================ -->
+  <section class="section bg-white" id="trustnet">
+    <div class="container">
+      <div class="trustnet-header">
+        <div class="section-header">
+          <span class="eyebrow">TrustNet™ Platform</span>
+          <span class="gold-rule"></span>
+          <h2 class="section-heading">Runtime AI Governance,<br/>Built for Production</h2>
+          <p class="body-prose" style="max-width:600px;">
+            TrustNet™ is Innocore's patent-pending AI governance platform that enforces policies, generates trust evidence, and keeps humans in authority — in real-time, at every AI decision point.
+          </p>
+        </div>
+        <div>
+          <span class="trustnet-badge">Patent Pending</span>
+        </div>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Policy icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Policy-Driven Enforcement</h3>
+          <p>
+            TrustNet™ translates your governance policies into machine-executable rules that operate in real time — intercepting, evaluating, and enforcing AI outputs before they reach end users or downstream systems. No more governance that lives only in documents.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Evidence icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3>Trust Evidence Pack</h3>
+          <p>
+            Every AI decision produces a cryptographically linked audit trail — the Trust Evidence Pack. Designed for regulatory examiners, board risk committees, and internal audit functions, TrustNet™ makes your AI's reasoning visible, reviewable, and defensible.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <!-- Human authority icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              <polyline points="15 3 17 5 21 1"/>
+            </svg>
+          </div>
+          <h3>Responsible AI by Design</h3>
+          <p>
+            Responsible AI is not a retrofit. TrustNet™ embeds fairness monitoring, bias detection, and human override pathways directly into the AI workflow architecture — ensuring that governance is operational from day one, not bolted on after a regulatory finding.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HUMAN VALUE GOVERNANCE FRAMEWORK
+  ============================================================ -->
+  <section class="section bg-navy" id="hvg">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="eyebrow eyebrow--light">Innocore's Proprietary Framework</span>
+        <span class="gold-rule" style="margin-left:auto;margin-right:auto;"></span>
+        <h2 class="section-heading section-heading--light">Human Value Governance™</h2>
+        <p class="body-prose body-prose--light" style="max-width:620px;margin:0 auto;">
+          HVG™ is the governance philosophy at the core of everything Innocore builds. It defines how enterprises should structure AI accountability so that humans remain in authority — and can prove it.
+        </p>
+      </div>
+
+      <div class="hvg-grid">
+
+        <div class="hvg-card">
+          <div class="hvg-num">01</div>
+          <h3>Governance in Motion</h3>
+          <p>
+            Governance must be active, not archival. HVG™ requires that AI policies be enforced continuously at the point of decision — not audited retroactively after harm has occurred. Governance in Motion means the guardrails are always on.
+          </p>
+          <span class="hvg-tag">Always-On Enforcement</span>
+        </div>
+
+        <div class="hvg-card">
+          <div class="hvg-num">02</div>
+          <h3>Evidence by Default</h3>
+          <p>
+            Every AI action should produce verifiable evidence as a natural byproduct — not as an add-on compliance exercise. HVG™ treats the audit trail as a first-class output, enabling organizations to demonstrate responsible AI behavior on demand, to any stakeholder.
+          </p>
+          <span class="hvg-tag">Audit-Ready by Design</span>
+        </div>
+
+        <div class="hvg-card">
+          <div class="hvg-num">03</div>
+          <h3>Human Authority Preserved</h3>
+          <p>
+            AI systems must be designed with explicit human override pathways and decision escalation protocols. HVG™ ensures that no AI system can remove human judgment from high-stakes decisions — and that the chain of authority is documented and enforceable.
+          </p>
+          <span class="hvg-tag">Human-in-the-Loop</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ADVISORY SERVICES
+  ============================================================ -->
+  <section class="section bg-gray" id="services">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="eyebrow">Advisory Services</span>
+        <span class="gold-rule" style="margin-left:auto;margin-right:auto;"></span>
+        <h2 class="section-heading">How Innocore Engages</h2>
+        <p class="body-prose" style="max-width:600px;margin:0 auto;">
+          Innocore works as a trusted strategic partner — embedded alongside your product, risk, and technology leadership to design, govern, and transform your AI capability.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-num">Service 01</div>
+          <h3>Enterprise AI Product Strategy</h3>
+          <p>
+            We help enterprise product and technology leaders define, prioritize, and execute AI roadmaps that are commercially valuable and governance-ready from inception. From opportunity assessment through build-buy-partner decisions to launch, Innocore brings structured rigor to AI product strategy.
+          </p>
+          <ul class="service-deliverables">
+            <li>AI opportunity &amp; risk assessment</li>
+            <li>Governance-integrated product roadmapping</li>
+            <li>Build-buy-partner decision frameworks</li>
+            <li>Executive stakeholder alignment facilitation</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">Service 02</div>
+          <h3>Responsible AI &amp; Governance</h3>
+          <p>
+            Translating responsible AI principles into operational policy, tooling, and process is Innocore's core competency. We design governance frameworks, implement the TrustNet™ platform, and prepare organizations for regulatory examination — including model risk management alignment.
+          </p>
+          <ul class="service-deliverables">
+            <li>AI governance program design &amp; implementation</li>
+            <li>TrustNet™ platform deployment</li>
+            <li>Model risk management alignment (SR 11-7)</li>
+            <li>Regulatory readiness &amp; examiner preparation</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">Service 03</div>
+          <h3>Transformation Leadership</h3>
+          <p>
+            Large-scale AI transformation requires more than technology. Innocore provides interim and advisory leadership for organizations undergoing AI-driven transformation — helping executive teams manage change, build AI-ready cultures, and sustain momentum through complexity.
+          </p>
+          <ul class="service-deliverables">
+            <li>Interim Chief AI Officer / AI governance leadership</li>
+            <li>AI change management and culture strategy</li>
+            <li>Board and C-suite AI literacy programs</li>
+            <li>Cross-functional AI operating model design</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOUNDER
+  ============================================================ -->
+  <section class="section bg-white" id="founder">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-photo-wrap">
+          <!-- Profile photo — replace src with actual image path -->
+          <img
+            src="assets/images/anitha-jagadeesh.jpg"
+            alt="Anitha Jagadeesh, Founder of Innocore Strategy & Solutions LLC"
+            class="founder-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="founder-photo-placeholder" style="display:none;" aria-hidden="true">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="28" r="16" stroke="#C9A84C" stroke-width="2.5"/>
+              <path d="M10 72c0-16.57 13.43-30 30-30s30 13.43 30 30" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="founder-gold-bar"></div>
+        </div>
+
+        <div class="founder-content">
+          <span class="eyebrow">Founder &amp; Principal</span>
+          <h2 class="founder-name">Anitha Jagadeesh</h2>
+          <p class="founder-title">Founder &amp; CEO, Innocore Strategy &amp; Solutions LLC</p>
+
+          <p class="founder-bio">
+            Anitha Jagadeesh is a financial services technology leader, AI governance practitioner, and enterprise transformation executive with more than two decades of experience building, governing, and scaling AI-driven product capabilities within complex regulated environments.
+          </p>
+          <p class="founder-bio" style="margin-top:1rem;">
+            She is the inventor of the patent-pending TrustNet™ runtime AI governance platform and the architect of the Human Value Governance™ (HVG) framework — a structured methodology for embedding accountability, evidence, and human authority into enterprise AI programs.
+          </p>
+          <p class="founder-bio" style="margin-top:1rem;">
+            Prior to founding Innocore, Anitha held senior product and technology leadership roles across leading financial services organizations, where she led AI product strategy, model risk governance, and large-scale digital transformation initiatives for Fortune 500 enterprises.
+          </p>
+
+          <div class="credential-chips">
+            <span class="credential-chip">Patent Pending — TrustNet™</span>
+            <span class="credential-chip">AI Governance</span>
+            <span class="credential-chip">Financial Services</span>
+            <span class="credential-chip">Enterprise Transformation</span>
+          </div>
+
+          <div class="prior-companies">
+            <div class="label">Prior Organizations</div>
+            <div class="company-list">
+              <span class="company-tag">Fortune 500 Financial Services</span>
+              <span class="company-tag">Enterprise FinTech</span>
+              <span class="company-tag">Capital Markets</span>
+              <span class="company-tag">Wealth Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA BAND
+  ============================================================ -->
+  <section class="cta-band">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="eyebrow" style="display:block;text-align:center;margin-bottom:0.75rem;">Ready to Start?</span>
+      <h2 class="section-heading" style="color:var(--white);text-align:center;">
+        Let's Build Governance<br/>That Holds Up
+      </h2>
+      <p>
+        Whether you're preparing for regulatory examination, deploying a new AI capability, or rethinking your AI governance program, Innocore is ready to engage.
+      </p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-primary">Schedule a Briefing</a>
+        <a href="mailto:anithajagadeesh@innocorestrategy.com" class="btn btn-outline-light">Email Directly</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="section bg-white" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Contact</span>
+        <span class="gold-rule"></span>
+        <h2 class="section-heading">Get in Touch</h2>
+        <p class="body-prose" style="max-width:560px;">
+          For speaking engagements, advisory inquiries, partnership discussions, or to learn more about TrustNet™ and the HVG™ framework, reach out directly.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="label">Email</div>
+              <a href="mailto:anithajagadeesh@innocorestrategy.com">anithajagadeesh@innocorestrategy.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="label">LinkedIn</div>
+              <a href="https://linkedin.com/in/anithajagadeesh" target="_blank" rel="noopener noreferrer">linkedin.com/in/anithajagadeesh</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="label">Location</div>
+              <span>United States</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="contact-item-content">
+              <div class="label">Website</div>
+              <span>innocorestrategy.com</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <form
+            name="contact"
+            method="POST"
+            action="mailto:anithajagadeesh@innocorestrategy.com"
+            onsubmit="handleFormSubmit(event)"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Organization name" />
+            </div>
+            <div class="form-group">
+              <label for="reason">Inquiry Type</label>
+              <select id="reason" name="reason">
+                <option value="">Select a topic...</option>
+                <option value="advisory">Advisory Services</option>
+                <option value="trustnet">TrustNet™ Platform</option>
+                <option value="speaking">Speaking Engagement</option>
+                <option value="partnership">Partnership / Research</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your AI governance challenge or inquiry…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo-link">
+            <img
+              src="assets/images/logo.jpg"
+              alt="Innocore Logo"
+              class="logo-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <div class="logo-svg-fallback" style="display:none;" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <circle cx="13" cy="8" r="4" stroke="#C9A84C" stroke-width="1.5"/>
+                <path d="M4 22c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name">Innocore</span>
+              <span class="logo-sub">Strategy &amp; Solutions LLC</span>
+            </div>
+          </a>
+          <div class="footer-gold-bar"></div>
+          <p class="footer-tagline">
+            Enterprise AI governance, responsible AI strategy, and the patent-pending TrustNet™ platform — built for financial services and regulated industries.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform &amp; Framework</h4>
+          <ul>
+            <li><a href="#trustnet">TrustNet™ Platform</a></li>
+            <li><a href="#hvg">Human Value Governance™</a></li>
+            <li><a href="#services">Advisory Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Innocore</a></li>
+            <li><a href="#founder">Anitha Jagadeesh</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://linkedin.com/in/anithajagadeesh" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:anithajagadeesh@innocorestrategy.com">Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Innocore Strategy &amp; Solutions LLC. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JS — Mobile Nav Toggle + Form Handler
+  ============================================================ -->
+  <script>
+    // Mobile nav toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav    = document.getElementById('mobileNav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburgerBtn.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-link[href^="#"]');
+
+    const observerOpts = { rootMargin: '-30% 0px -60% 0px' };
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, observerOpts);
+
+    sections.forEach(s => observer.observe(s));
+
+    // Contact form — fallback mailto
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const fname   = form.fname.value.trim();
+      const lname   = form.lname.value.trim();
+      const email   = form.email.value.trim();
+      const company = form.company.value.trim();
+      const reason  = form.reason.value;
+      const message = form.message.value.trim();
+
+      const subject = encodeURIComponent(`Innocore Inquiry${reason ? ' — ' + reason : ''} from ${fname} ${lname}`);
+      const body    = encodeURIComponent(
+        `Name: ${fname} ${lname}\nEmail: ${email}\nCompany: ${company}\nTopic: ${reason}\n\n${message}`
+      );
+
+      window.location.href = `mailto:anithajagadeesh@innocorestrategy.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+
+</body>
+</html>
