@@ -1149,7 +1149,7 @@
       .hero-visual { display: none; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .hvg-grid { grid-template-columns: repeat(2, 1fr); }
+      .hvg-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .founder-grid { grid-template-columns: 1fr; }
       .founder-photo-wrap { max-width: 280px; }
@@ -1173,7 +1173,7 @@
 
       .features-grid,
       .hvg-grid,
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr !important; }
 
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -1356,68 +1356,20 @@
   ============================================================ -->
   <section class="section bg-white" id="trustnet">
     <div class="container">
-      <div class="trustnet-header">
-        <div class="section-header">
-          <span class="eyebrow">TrustNet™ Platform</span>
-          <span class="gold-rule"></span>
-          <h2 class="section-heading">Runtime AI Governance,<br/>Built for Production</h2>
-          <p class="body-prose" style="max-width:600px;">
-            TrustNet™ is Innocore's patent-pending AI governance platform that enforces policies, generates trust evidence, and keeps humans in authority — in real-time, at every AI decision point.
-          </p>
+      <div style="max-width:700px;margin:0 auto;text-align:center;">
+        <span class="eyebrow">TrustNet™ Platform</span>
+        <span class="gold-rule" style="margin:0 auto 1.25rem;"></span>
+        <h2 class="section-heading">A Platform Built for<br/>Regulated Enterprise AI</h2>
+        <p class="body-prose" style="margin:1.25rem auto 2rem;">
+          TrustNet™ is a patent-pending runtime AI governance platform designed for regulated enterprise environments.
+        </p>
+        <div style="display:inline-flex;align-items:center;gap:1rem;background:var(--bg-gray);border:1px solid var(--border);border-radius:8px;padding:1rem 1.75rem;margin-bottom:2.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span style="font-size:0.9375rem;font-weight:500;color:var(--muted);">Full details available under NDA.</span>
         </div>
         <div>
-          <span class="trustnet-badge">Patent Pending</span>
+          <a href="#contact" class="btn btn-primary">Request a Briefing</a>
         </div>
-      </div>
-
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <!-- Policy icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <polyline points="9 12 11 14 15 10"/>
-            </svg>
-          </div>
-          <h3>Policy-Driven Enforcement</h3>
-          <p>
-            TrustNet™ translates your governance policies into machine-executable rules that operate in real time — intercepting, evaluating, and enforcing AI outputs before they reach end users or downstream systems. No more governance that lives only in documents.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <!-- Evidence icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <h3>Trust Evidence Pack</h3>
-          <p>
-            Every AI decision produces a cryptographically linked audit trail — the Trust Evidence Pack. Designed for regulatory examiners, board risk committees, and internal audit functions, TrustNet™ makes your AI's reasoning visible, reviewable, and defensible.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <!-- Human authority icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-              <polyline points="15 3 17 5 21 1"/>
-            </svg>
-          </div>
-          <h3>Responsible AI by Design</h3>
-          <p>
-            Responsible AI is not a retrofit. TrustNet™ embeds fairness monitoring, bias detection, and human override pathways directly into the AI workflow architecture — ensuring that governance is operational from day one, not bolted on after a regulatory finding.
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1432,40 +1384,62 @@
         <span class="eyebrow eyebrow--light">Innocore's Proprietary Framework</span>
         <span class="gold-rule" style="margin-left:auto;margin-right:auto;"></span>
         <h2 class="section-heading section-heading--light">Human Value Governance™</h2>
-        <p class="body-prose body-prose--light" style="max-width:620px;margin:0 auto;">
-          HVG™ is the governance philosophy at the core of everything Innocore builds. It defines how enterprises should structure AI accountability so that humans remain in authority — and can prove it.
+        <p class="body-prose body-prose--light" style="max-width:640px;margin:0 auto 1.5rem;">
+          We have data governance. We have model governance. What we don't have is a governance discipline for protecting the human qualities organizations depend on — the ones AI must never be allowed to replace.
+        </p>
+        <p class="body-prose body-prose--light" style="max-width:640px;margin:0 auto;">
+          HVG™ is that discipline. It defines, protects, and makes auditable six human qualities that are enterprise assets — not soft skills.
         </p>
       </div>
 
-      <div class="hvg-grid">
+      <div class="hvg-grid" style="grid-template-columns: repeat(3,1fr); margin-top: 3rem;">
 
         <div class="hvg-card">
           <div class="hvg-num">01</div>
-          <h3>Governance in Motion</h3>
-          <p>
-            Governance must be active, not archival. HVG™ requires that AI policies be enforced continuously at the point of decision — not audited retroactively after harm has occurred. Governance in Motion means the guardrails are always on.
-          </p>
-          <span class="hvg-tag">Always-On Enforcement</span>
+          <h3>Empathy</h3>
+          <p>The capacity to recognize the human context behind a transaction and respond to it — not just the process.</p>
         </div>
 
         <div class="hvg-card">
           <div class="hvg-num">02</div>
-          <h3>Evidence by Default</h3>
-          <p>
-            Every AI action should produce verifiable evidence as a natural byproduct — not as an add-on compliance exercise. HVG™ treats the audit trail as a first-class output, enabling organizations to demonstrate responsible AI behavior on demand, to any stakeholder.
-          </p>
-          <span class="hvg-tag">Audit-Ready by Design</span>
+          <h3>Moral Judgment</h3>
+          <p>The capacity to make a principled decision when policy is incomplete — weighing values, absorbing ambiguity, and choosing a course a human can defend.</p>
         </div>
 
         <div class="hvg-card">
           <div class="hvg-num">03</div>
-          <h3>Human Authority Preserved</h3>
-          <p>
-            AI systems must be designed with explicit human override pathways and decision escalation protocols. HVG™ ensures that no AI system can remove human judgment from high-stakes decisions — and that the chain of authority is documented and enforceable.
-          </p>
-          <span class="hvg-tag">Human-in-the-Loop</span>
+          <h3>Trust</h3>
+          <p>Earned through discretion, presence, and accountability over time. It cannot be generated by a system — only by people.</p>
         </div>
 
+        <div class="hvg-card">
+          <div class="hvg-num">04</div>
+          <h3>Emotional Presence</h3>
+          <p>The ability to be genuinely present with another person in a high-stakes moment — not simulated, not scripted.</p>
+        </div>
+
+        <div class="hvg-card">
+          <div class="hvg-num">05</div>
+          <h3>Experiential Wisdom</h3>
+          <p>Judgment built through difficulty, failure, and complexity over time — the kind no model can acquire from data alone.</p>
+        </div>
+
+        <div class="hvg-card">
+          <div class="hvg-num">06</div>
+          <h3>Critical Thinking</h3>
+          <p>The capacity to question, challenge, and override a system's output — the faculty governance itself depends on.</p>
+        </div>
+
+      </div>
+
+      <!-- CTA to HVG site -->
+      <div style="text-align:center;margin-top:3.5rem;">
+        <p style="font-size:1rem;color:rgba(255,255,255,0.65);margin-bottom:1.5rem;">
+          The full framework — including covenants, audit evidence, and enterprise implementation guidance — lives at
+        </p>
+        <a href="https://humanvaluegovernance.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light" style="font-size:0.9375rem;padding:0.75rem 2rem;">
+          Read the Full HVG™ Framework &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -1496,7 +1470,7 @@
           <ul class="service-deliverables">
             <li>AI opportunity &amp; risk assessment</li>
             <li>Governance-integrated product roadmapping</li>
-            <li>Build-buy-partner decision frameworks</li>
+            <li>AI roadmap aligned to business outcomes</li>
             <li>Executive stakeholder alignment facilitation</li>
           </ul>
         </div>
@@ -1505,27 +1479,27 @@
           <div class="service-num">Service 02</div>
           <h3>Responsible AI &amp; Governance</h3>
           <p>
-            Translating responsible AI principles into operational policy, tooling, and process is Innocore's core competency. We design governance frameworks, implement the TrustNet™ platform, and prepare organizations for regulatory examination — including model risk management alignment.
+            Translating responsible AI principles into operational policy, tooling, and process is Innocore's core competency. We design governance frameworks and prepare organizations for regulatory examination.
           </p>
           <ul class="service-deliverables">
             <li>AI governance program design &amp; implementation</li>
-            <li>TrustNet™ platform deployment</li>
-            <li>Model risk management alignment (SR 11-7)</li>
-            <li>Regulatory readiness &amp; examiner preparation</li>
+            <li>GenAI governance framework design</li>
+            <li>LLM and RAG architecture for regulated environments</li>
+            <li>Risk, Legal, and Privacy partnership model</li>
           </ul>
         </div>
 
         <div class="service-card">
           <div class="service-num">Service 03</div>
-          <h3>Transformation Leadership</h3>
+          <h3>Interim Data &amp; AI Executive</h3>
           <p>
-            Large-scale AI transformation requires more than technology. Innocore provides interim and advisory leadership for organizations undergoing AI-driven transformation — helping executive teams manage change, build AI-ready cultures, and sustain momentum through complexity.
+            For organizations that need experienced senior leadership to build or transform their data and AI function from the ground up. Innocore provides interim executive leadership — strategy, team buildout, operating model design, and governance — from first principles.
           </p>
           <ul class="service-deliverables">
-            <li>Interim Chief AI Officer / AI governance leadership</li>
-            <li>AI change management and culture strategy</li>
-            <li>Board and C-suite AI literacy programs</li>
-            <li>Cross-functional AI operating model design</li>
+            <li>Fractional CDO and interim Head of Data &amp; AI</li>
+            <li>Data mesh and data product operating model design</li>
+            <li>Enterprise data organization buildout</li>
+            <li>Data literacy and adoption programs</li>
           </ul>
         </div>
 
@@ -1577,6 +1551,12 @@
             <span class="credential-chip">AI Governance</span>
             <span class="credential-chip">Financial Services</span>
             <span class="credential-chip">Enterprise Transformation</span>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <a href="https://linkedin.com/in/anithajagadeesh" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size:0.875rem;">
+              Connect on LinkedIn
+            </a>
           </div>
 
           <div class="prior-companies">
@@ -1654,7 +1634,7 @@
             </div>
             <div class="contact-item-content">
               <div class="label">LinkedIn</div>
-              <a href="https://linkedin.com/in/anithajagadeesh" target="_blank" rel="noopener noreferrer">linkedin.com/in/anithajagadeesh</a>
+              <a href="https://www.linkedin.com/company/innocore-strategy-solutions-llc" target="_blank" rel="noopener noreferrer">linkedin.com/company/innocore-strategy-solutions-llc</a>
             </div>
           </div>
 
@@ -1689,29 +1669,24 @@
 
         <div class="contact-form">
           <h3>Send a Message</h3>
-          <form
-            name="contact"
-            method="POST"
-            action="mailto:anithajagadeesh@innocorestrategy.com"
-            onsubmit="handleFormSubmit(event)"
-          >
+          <form id="contactForm" method="POST" action="https://formspree.io/f/xaqknppw">
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" placeholder="Jane" required />
+                <input type="text" id="fname" name="fname" placeholder="First name" required />
               </div>
               <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" placeholder="Smith" required />
+                <input type="text" id="lname" name="lname" placeholder="Last name" required />
               </div>
             </div>
             <div class="form-group">
               <label for="email">Work Email</label>
-              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              <input type="email" id="email" name="email" placeholder="Work email" required />
             </div>
             <div class="form-group">
               <label for="company">Company</label>
-              <input type="text" id="company" name="company" placeholder="Organization name" />
+              <input type="text" id="company" name="company" placeholder="Organization" />
             </div>
             <div class="form-group">
               <label for="reason">Inquiry Type</label>
@@ -1726,11 +1701,17 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us about your AI governance challenge or inquiry…" required></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your inquiry…" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">
               Send Message
             </button>
+            <div id="formSuccess" style="display:none;margin-top:1rem;padding:0.875rem 1rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;color:#166534;font-size:0.9375rem;font-weight:500;">
+              Message sent — thank you. We'll be in touch shortly.
+            </div>
+            <div id="formError" style="display:none;margin-top:1rem;padding:0.875rem 1rem;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;color:#991b1b;font-size:0.9375rem;font-weight:500;">
+              Something went wrong. Please email us directly at <a href="mailto:anithajagadeesh@innocorestrategy.com" style="color:#991b1b;text-decoration:underline;">anithajagadeesh@innocorestrategy.com</a>.
+            </div>
           </form>
         </div>
       </div>
@@ -1784,7 +1765,7 @@
             <li><a href="#about">About Innocore</a></li>
             <li><a href="#founder">Anitha Jagadeesh</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="https://linkedin.com/in/anithajagadeesh" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/company/innocore-strategy-solutions-llc" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="mailto:anithajagadeesh@innocorestrategy.com">Email Us</a></li>
           </ul>
         </div>
@@ -1843,24 +1824,41 @@
 
     sections.forEach(s => observer.observe(s));
 
-    // Contact form — fallback mailto
-    function handleFormSubmit(e) {
+    // Contact form — Formspree AJAX submission
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn   = document.getElementById('submitBtn');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError   = document.getElementById('formError');
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const form = e.target;
-      const fname   = form.fname.value.trim();
-      const lname   = form.lname.value.trim();
-      const email   = form.email.value.trim();
-      const company = form.company.value.trim();
-      const reason  = form.reason.value;
-      const message = form.message.value.trim();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      formSuccess.style.display = 'none';
+      formError.style.display   = 'none';
 
-      const subject = encodeURIComponent(`Innocore Inquiry${reason ? ' — ' + reason : ''} from ${fname} ${lname}`);
-      const body    = encodeURIComponent(
-        `Name: ${fname} ${lname}\nEmail: ${email}\nCompany: ${company}\nTopic: ${reason}\n\n${message}`
-      );
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
 
-      window.location.href = `mailto:anithajagadeesh@innocorestrategy.com?subject=${subject}&body=${body}`;
-    }
+        if (res.ok) {
+          contactForm.reset();
+          formSuccess.style.display = 'block';
+          submitBtn.textContent = 'Sent';
+        } else {
+          formError.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      } catch {
+        formError.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
   </script>
 
 </body>
