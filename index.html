@@ -287,6 +287,22 @@
     .nav-link:hover  { color: var(--navy); }
     .nav-link.active { color: var(--gold); border-bottom-color: var(--gold); }
 
+    .nav-link--tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      color: var(--gold-dark);
+    }
+    .nav-link--tool::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .nav-link--tool:hover { color: var(--navy); }
+
     .nav-cta { margin-left: 0.5rem; }
 
     /* Hamburger */
@@ -1223,6 +1239,7 @@
         <a href="#hvg"      class="nav-link">HVG Framework</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#founder"  class="nav-link">Founder</a>
+        <a href="/agent-boundary-assessment" class="nav-link nav-link--tool">Governance Evaluator</a>
         <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
       </nav>
 
@@ -1239,6 +1256,7 @@
     <a href="#hvg"      class="nav-link">HVG Framework</a>
     <a href="#services" class="nav-link">Advisory Services</a>
     <a href="#founder"  class="nav-link">Founder</a>
+    <a href="/agent-boundary-assessment" class="nav-link nav-link--tool">Governance Evaluator</a>
     <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
   </nav>
 
