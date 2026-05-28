@@ -805,6 +805,104 @@
     }
 
     /* ============================================================
+       THOUGHT LEADERSHIP
+    ============================================================ */
+    .tl-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .tl-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tl-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 240ms cubic-bezier(0.4,0,0.2,1);
+      transform-origin: left;
+    }
+
+    .tl-card:hover::before { transform: scaleX(1); }
+
+    .tl-card:hover {
+      box-shadow: 0 12px 40px rgba(11,31,59,0.08);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .tl-type {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--gold);
+      margin-bottom: 0.875rem;
+    }
+
+    .tl-card h3 {
+      font-size: 1.1875rem;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .tl-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-top: auto;
+    }
+
+    .tl-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--navy);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.45rem 1rem;
+      transition: var(--transition);
+    }
+
+    .tl-link:hover {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+    }
+
+    .tl-link--primary {
+      background: var(--gold-faint);
+      border-color: var(--gold-light);
+      color: var(--navy);
+    }
+
+    .tl-link--primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold);
+    }
+
+    @media (max-width: 860px) {
+      .tl-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
        FOUNDER SECTION
     ============================================================ */
     .founder-grid {
@@ -1237,8 +1335,9 @@
         <a href="#about"    class="nav-link">About</a>
         <a href="#trustnet" class="nav-link">TrustNet</a>
         <a href="#hvg"      class="nav-link">HVG Framework</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#founder"  class="nav-link">Founder</a>
+        <a href="#services"           class="nav-link">Services</a>
+        <a href="#thought-leadership" class="nav-link">Thought Leadership</a>
+        <a href="#founder"            class="nav-link">Founder</a>
         <a href="/agent-boundary-assessment" class="nav-link nav-link--tool">Governance Evaluator</a>
         <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
       </nav>
@@ -1254,8 +1353,9 @@
     <a href="#about"    class="nav-link">About</a>
     <a href="#trustnet" class="nav-link">TrustNet Platform</a>
     <a href="#hvg"      class="nav-link">HVG Framework</a>
-    <a href="#services" class="nav-link">Advisory Services</a>
-    <a href="#founder"  class="nav-link">Founder</a>
+    <a href="#services"           class="nav-link">Advisory Services</a>
+    <a href="#thought-leadership" class="nav-link">Thought Leadership</a>
+    <a href="#founder"            class="nav-link">Founder</a>
     <a href="/agent-boundary-assessment" class="nav-link nav-link--tool">Governance Evaluator</a>
     <a href="#contact"  class="btn btn-primary nav-cta">Get in Touch</a>
   </nav>
@@ -1527,6 +1627,67 @@
 
 
   <!-- ============================================================
+       THOUGHT LEADERSHIP & PUBLICATIONS
+  ============================================================ -->
+  <section class="section bg-white" id="thought-leadership">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="eyebrow">Thought Leadership &amp; Publications</span>
+        <span class="gold-rule" style="margin-left:auto;margin-right:auto;"></span>
+        <h2 class="section-heading">Ideas Shaping AI Governance</h2>
+        <p class="body-prose" style="max-width:600px;margin:0 auto;">
+          Research, frameworks, and perspectives on responsible AI deployment in regulated enterprise.
+        </p>
+      </div>
+
+      <div class="tl-grid">
+
+        <div class="tl-card">
+          <div class="tl-type">Essay &mdash; Substack</div>
+          <h3>An Agent Is a Product With Delegated Authority</h3>
+          <div class="tl-actions">
+            <a href="https://enterprisedataairealities.substack.com/p/an-agent-is-a-product-with-delegated" target="_blank" rel="noopener noreferrer" class="tl-link tl-link--primary">Read on Substack &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tl-card">
+          <div class="tl-type">Essay &mdash; Substack</div>
+          <h3>The Tool Layer Is the Real Product</h3>
+          <div class="tl-actions">
+            <a href="https://enterprisedataairealities.substack.com/p/issue-7-the-tool-layer-is-the-real" target="_blank" rel="noopener noreferrer" class="tl-link tl-link--primary">Read on Substack &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tl-card">
+          <div class="tl-type">Governance Standard &mdash; PDF</div>
+          <h3>AI Agent Governance Standard</h3>
+          <div class="tl-actions">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScPdUqSE8-Lo1QsDDCy0ijl_3VD9Pr9Jyq7qKKCzd2oPJfGOQ/viewform" target="_blank" rel="noopener noreferrer" class="tl-link tl-link--primary">Download PDF &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tl-card">
+          <div class="tl-type">Article &mdash; LinkedIn</div>
+          <h3>From Chaos to Clarity: Why Data Fabric and Data Products Are the Architecture Enterprises Need Now</h3>
+          <div class="tl-actions">
+            <a href="https://www.linkedin.com/pulse/from-chaos-clarity-why-data-fabric-products-need-now-anitha-jagadeesh-2ka7c/" target="_blank" rel="noopener noreferrer" class="tl-link tl-link--primary">Read &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tl-card">
+          <div class="tl-type">Essay &mdash; Substack</div>
+          <h3>Enterprise AI Reference Architecture for 2026: From Pilots to Production</h3>
+          <div class="tl-actions">
+            <a href="https://enterprisedataairealities.substack.com/p/enterprise-ai-reference-architecture" target="_blank" rel="noopener noreferrer" class="tl-link tl-link--primary">Read on Substack &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        FOUNDER
   ============================================================ -->
   <section class="section bg-white" id="founder">
@@ -1774,6 +1935,7 @@
             <li><a href="#trustnet">TrustNet™ Platform</a></li>
             <li><a href="#hvg">Human Value Governance™</a></li>
             <li><a href="#services">Advisory Services</a></li>
+            <li><a href="#thought-leadership">Thought Leadership</a></li>
           </ul>
         </div>
 
@@ -1790,7 +1952,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Innocore Strategy &amp; Solutions LLC. All rights reserved.</p>
+        <p>&copy; 2026 Innocore Strategy &amp; Solutions LLC. All rights reserved.</p>
         <div class="footer-links">
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
